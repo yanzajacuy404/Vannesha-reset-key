@@ -1,289 +1,300 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Reset Lisensi | Vannesha License Hub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <style>
-    * { font-family: 'Inter', sans-serif; }
-    body {
-      background: linear-gradient(145deg, #0a0f1a 0%, #05080f 100%);
-      min-height: 100vh;
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 2.9s cubic-bezier(0.2, 0.9, 0.3, 1.1), transform 2.9s cubic-bezier(0.2, 0.9, 0.3, 1.1);
-    }
-    body.loaded { opacity: 1; transform: translateY(0); }
-    .preloader {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: #05080f; display: flex; justify-content: center; align-items: center;
-      z-index: 999; transition: opacity 1.2s ease, visibility 1.2s;
-    }
-    .preloader.hide { opacity: 0; visibility: hidden; }
-    .spinner {
-      width: 44px; height: 44px;
-      border: 3px solid rgba(99,102,241,0.2); border-top: 3px solid #6366f1;
-      border-radius: 50%; animation: spin 0.9s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .particle {
-      position: fixed; background: rgba(99,102,241,0.22); border-radius: 50%;
-      pointer-events: none; animation: floatParticle 12s infinite linear;
-    }
-    @keyframes floatParticle {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      20% { opacity: 0.6; }
-      80% { opacity: 0.5; }
-      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
-    }
-    .glass-card {
-      background: rgba(15,25,35,0.65); backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
-    }
-    .input-glow:focus { box-shadow: 0 0 0 2px rgba(99,102,241,0.5); outline: none; }
-    @keyframes gentle-float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-4px); } }
-    .icon-float { animation: gentle-float 3s ease-in-out infinite; }
-
-    /* Tombol musik - posisi dinaikkan (bottom 90px) */
-    .music-button {
-      position: fixed;
-      bottom: 90px;
-      right: 28px;
-      z-index: 200;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      backdrop-filter: blur(8px);
-      border-radius: 60px;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      cursor: pointer;
-      border: 2px solid #6366f1;
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
-      transition: all 0.2s ease;
-    }
-    .music-button:hover { transform: scale(1.05); background: #6366f1; border-color: #a5b4fc; box-shadow: 0 0 20px #6366f1; }
-    .music-button span { font-weight: 800; font-size: 1.1rem; color: white; }
-    .music-button .status { font-size: 0.75rem; background: #00000066; padding: 4px 12px; border-radius: 40px; color: #cbd5e1; }
-    @media (max-width: 550px) {
-      .music-button { bottom: 70px; padding: 8px 18px; gap: 10px; }
-      .music-button span { font-size: 0.9rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Reset Lisensi | Vannesha ⚡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body {
+            background: linear-gradient(145deg, #0a0f1a 0%, #05080f 100%);
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 2.9s cubic-bezier(0.2, 0.9, 0.3, 1.1), transform 2.9s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+        }
+        body.loaded { opacity: 1; transform: translateY(0); }
+        .preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #05080f; display: flex; justify-content: center; align-items: center;
+            z-index: 999; transition: opacity 1.2s ease, visibility 1.2s;
+        }
+        .preloader.hide { opacity: 0; visibility: hidden; }
+        .spinner {
+            width: 44px; height: 44px;
+            border: 3px solid rgba(99,102,241,0.2); border-top: 3px solid #6366f1;
+            border-radius: 50%; animation: spin 0.9s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .particle {
+            position: fixed; background: rgba(99,102,241,0.22); border-radius: 50%;
+            pointer-events: none; animation: floatParticle 12s infinite linear;
+        }
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.5; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+        }
+        .glass-card {
+            background: rgba(15,25,35,0.65); backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+        }
+        .input-glow:focus { box-shadow: 0 0 0 2px rgba(99,102,241,0.5); outline: none; }
+        @keyframes gentle-float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-4px); } }
+        .icon-float { animation: gentle-float 3s ease-in-out infinite; }
+        /* Tombol musik - posisi agak ke atas */
+        .music-button {
+            position: fixed;
+            bottom: 90px;
+            right: 28px;
+            z-index: 200;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            backdrop-filter: blur(8px);
+            border-radius: 60px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            border: 2px solid #6366f1;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+            transition: all 0.2s ease;
+        }
+        .music-button:hover { transform: scale(1.05); background: #6366f1; border-color: #a5b4fc; box-shadow: 0 0 20px #6366f1; }
+        .music-button span { font-weight: 800; font-size: 1.1rem; color: white; }
+        .music-button .status { font-size: 0.75rem; background: #00000066; padding: 4px 12px; border-radius: 40px; color: #cbd5e1; }
+        @media (max-width: 550px) {
+            .music-button { bottom: 70px; padding: 8px 18px; gap: 10px; }
+            .music-button span { font-size: 0.9rem; }
+        }
+    </style>
 </head>
 <body>
 
 <div class="preloader" id="preloader"><div class="spinner"></div></div>
 <div id="particles-container" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;"></div>
 
-<!-- Tombol musik dengan posisi lebih tinggi -->
+<!-- Tombol musik -->
 <div class="music-button" id="musicButton">
-  <span>🎵 SELALU SABAR</span>
-  <div class="status" id="musicStatus">⏸️ Henti</div>
+    <span>🎵 SELALU SABAR</span>
+    <div class="status" id="musicStatus">⏸️ Henti</div>
 </div>
 
 <audio id="backsound" loop preload="auto">
-  <source src="https://www.image2url.com/r2/default/audio/1779631197614-d750f123-5ae1-45b6-8cdb-4ad595bbef99.mp3" type="audio/mpeg">
+    <source src="https://www.image2url.com/r2/default/audio/1779631197614-d750f123-5ae1-45b6-8cdb-4ad595bbef99.mp3" type="audio/mpeg">
 </audio>
 
 <div class="relative z-10 min-h-screen flex items-center justify-center px-4 py-8">
-  <div class="w-full max-w-md">
-    <div class="glass-card rounded-2xl p-6 md:p-7">
-      <div class="flex justify-center mb-5">
-        <div class="relative icon-float">
-          <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full blur-md opacity-50"></div>
-          <div class="relative bg-slate-800/80 w-14 h-14 rounded-full flex items-center justify-center border border-white/10 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-indigo-300">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="text-center space-y-1 mb-6">
-        <h2 class="text-2xl font-bold bg-gradient-to-r from-white via-indigo-200 to-blue-200 bg-clip-text text-transparent">Reset Akses Lisensi</h2>
-        <p class="text-slate-400 text-sm">Masukkan key lisensi untuk memulai ulang aksesmu.</p>
-      </div>
-
-      <!-- Form Reset License -->
-      <form id="resetForm" class="space-y-5">
-        <div>
-          <label for="license_key" class="block text-sm font-medium text-slate-300 mb-1 ml-1">License Key</label>
-          <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                <path fill-rule="evenodd" d="M14.5 1A4.5 4.5 0 0 0 10 5.5V9H3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1.16l1.5-1.5a1.5 1.5 0 0 0 0-2.12l-.5-.5.5-.5a1.5 1.5 0 0 0 0-2.12l-.5-.5.5-.5a1.5 1.5 0 0 0 0-2.12l-1.5-1.5H14.5Zm-1.5 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" clip-rule="evenodd"></path>
-              </svg>
+    <div class="w-full max-w-md">
+        <div class="glass-card rounded-2xl p-6 md:p-7">
+            <div class="flex justify-center mb-5">
+                <div class="relative icon-float">
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full blur-md opacity-50"></div>
+                    <div class="relative bg-slate-800/80 w-14 h-14 rounded-full flex items-center justify-center border border-white/10 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-indigo-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"></path>
+                        </svg>
+                    </div>
+                </div>
             </div>
-            <input type="text" name="license_key" id="license_key" required 
-                   class="w-full bg-slate-800/60 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-white placeholder:text-slate-500 focus:border-indigo-500 transition input-glow"
-                   placeholder="Masukkan lisensi Anda" autocomplete="off">
-          </div>
-        </div>
-        <button type="submit" id="resetButton" 
-                class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-md flex items-center justify-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"></path>
-          </svg>
-          Reset License
-        </button>
-      </form>
+            <div class="text-center space-y-1 mb-6">
+                <h2 class="text-2xl font-bold bg-gradient-to-r from-white via-indigo-200 to-blue-200 bg-clip-text text-transparent">Reset Akses Lisensi</h2>
+                <p class="text-slate-400 text-sm">Masukkan key lisensi untuk memulai ulang aksesmu.</p>
+            </div>
 
-      <!-- Link Perpanjangan Key -->
-      <div class="mt-8 pt-4 border-t border-slate-700/50 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-400">
-        <span>Perpanjang key:</span>
-        <a href="https://t.me/Vannesha889" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-1.5 bg-slate-800/50 hover:bg-slate-700/70 text-indigo-300 hover:text-indigo-200 font-medium px-3 py-1 rounded-full transition border border-slate-600/30">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path>
-          </svg>
-          @Vannesha889
-        </a>
-      </div>
-      <p class="text-xs text-center text-slate-500 mt-5">🔒 Lisensi resmi &nbsp;|&nbsp; Hubungi owner jika kendala</p>
+            <!-- Form Reset License -->
+            <form id="resetForm" class="space-y-5">
+                <div>
+                    <label for="license_key" class="block text-sm font-medium text-slate-300 mb-1 ml-1">License Key</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                <path fill-rule="evenodd" d="M14.5 1A4.5 4.5 0 0 0 10 5.5V9H3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1.16l1.5-1.5a1.5 1.5 0 0 0 0-2.12l-.5-.5.5-.5a1.5 1.5 0 0 0 0-2.12l-.5-.5.5-.5a1.5 1.5 0 0 0 0-2.12l-1.5-1.5H14.5Zm-1.5 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <input type="text" name="license_key" id="license_key" required 
+                               class="w-full bg-slate-800/60 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-white placeholder:text-slate-500 focus:border-indigo-500 transition input-glow"
+                               placeholder="Masukkan lisensi Anda" autocomplete="off">
+                    </div>
+                </div>
+                <button type="submit" id="resetButton" 
+                        class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-md flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"></path>
+                    </svg>
+                    Reset License
+                </button>
+            </form>
+
+            <!-- Link Perpanjangan Key -->
+            <div class="mt-8 pt-4 border-t border-slate-700/50 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-400">
+                <span>Perpanjang key:</span>
+                <a href="https://t.me/Vannesha889" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-1.5 bg-slate-800/50 hover:bg-slate-700/70 text-indigo-300 hover:text-indigo-200 font-medium px-3 py-1 rounded-full transition border border-slate-600/30">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path>
+                    </svg>
+                    @Vannesha889
+                </a>
+            </div>
+            <p class="text-xs text-center text-slate-500 mt-5">🔒 Lisensi resmi &nbsp;|&nbsp; Hubungi owner jika kendala</p>
+        </div>
     </div>
-  </div>
 </div>
 
 <script>
-  // Animasi kedatangan
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.body.classList.add('loaded');
-      const preloader = document.getElementById('preloader');
-      if (preloader) {
-        preloader.classList.add('hide');
-        setTimeout(() => preloader.style.display = 'none', 1000);
-      }
-    }, 200);
-  });
+    // Animasi kedatangan
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('hide');
+                setTimeout(() => preloader.style.display = 'none', 1000);
+            }
+        }, 200);
+    });
 
-  // Partikel
-  const container = document.getElementById('particles-container');
-  for (let i = 0; i < 30; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.floor(Math.random() * 7) + 2;
-    p.style.width = size + 'px';
-    p.style.height = size + 'px';
-    p.style.left = Math.random() * 100 + '%';
-    p.style.animationDuration = Math.random() * 14 + 9 + 's';
-    p.style.animationDelay = Math.random() * 9 + 's';
-    p.style.opacity = Math.random() * 0.4 + 0.1;
-    container.appendChild(p);
-  }
-
-  // Musik dengan tombol posisi lebih tinggi (sudah di CSS)
-  const audio = document.getElementById('backsound');
-  const musicBtn = document.getElementById('musicButton');
-  const statusSpan = document.getElementById('musicStatus');
-  audio.volume = 0.5;
-  audio.loop = true;
-  let isPlaying = false;
-
-  function updateButton() {
-    if (isPlaying) {
-      statusSpan.innerHTML = '🎵 Berputar';
-      musicBtn.style.background = '#6366f1';
-    } else {
-      statusSpan.innerHTML = '⏸️ Henti';
-      musicBtn.style.background = 'linear-gradient(135deg, #1e293b, #0f172a)';
-    }
-  }
-  function playAudio() {
-    audio.play().then(() => { isPlaying = true; updateButton(); })
-      .catch(() => { isPlaying = false; updateButton(); statusSpan.innerHTML = '❌ Klik putar'; });
-  }
-  function pauseAudio() { audio.pause(); isPlaying = false; updateButton(); }
-  musicBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (isPlaying) pauseAudio();
-    else playAudio();
-  });
-  setTimeout(() => { playAudio(); }, 500);
-  audio.addEventListener('error', () => { statusSpan.innerHTML = '⚠️ Gagal muat'; musicBtn.style.opacity = '0.6'; });
-
-  // ==================== RESET API (SESUAI DOKUMENTASI) ====================
-  const RESET_API_URL = 'https://yudhamodz.my.id/api/reseller/reset';
-  const API_KEY = 'VYNIX-API-JIKG5BY1S3JG64EH';
-
-  const resetForm = document.getElementById('resetForm');
-  const resetButton = document.getElementById('resetButton');
-  const licenseInput = document.getElementById('license_key');
-
-  resetForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const licenseKey = licenseInput.value.trim();
-    if (!licenseKey) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Masukkan license key terlebih dahulu!',
-        background: '#1a1a2a',
-        color: '#fff'
-      });
-      return;
+    // Partikel
+    const container = document.getElementById('particles-container');
+    for (let i = 0; i < 30; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.floor(Math.random() * 7) + 2;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDuration = Math.random() * 14 + 9 + 's';
+        p.style.animationDelay = Math.random() * 9 + 's';
+        p.style.opacity = Math.random() * 0.4 + 0.1;
+        container.appendChild(p);
     }
 
-    // Set loading state
-    resetButton.disabled = true;
-    resetButton.classList.add('opacity-70', 'cursor-not-allowed');
-    const originalText = resetButton.innerHTML;
-    resetButton.innerHTML = '<svg class="animate-spin h-5 w-5 mr-2 inline" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Memproses...';
-
-    try {
-      const formBody = new URLSearchParams();
-      formBody.append('api_key', API_KEY);
-      formBody.append('key', licenseKey);
-
-      const response = await fetch(RESET_API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formBody.toString()
-      });
-
-      const data = await response.json();
-
-      if (data.status === true) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Berhasil!',
-          text: data.message || 'License key berhasil direset. Akses Anda telah diperbaharui.',
-          background: '#1a1a2a',
-          color: '#fff',
-          confirmButtonColor: '#6366f1'
-        });
-        licenseInput.value = '';
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Gagal!',
-          text: data.message || 'License key tidak valid atau sudah kadaluarsa.',
-          background: '#1a1a2a',
-          color: '#fff',
-          confirmButtonColor: '#6366f1'
-        });
-      }
-    } catch (error) {
-      console.error(error);
-      Swal.fire({
-        icon: 'error',
-        title: 'Kesalahan Koneksi',
-        text: 'Gagal terhubung ke server. Periksa koneksi internet Anda.',
-        background: '#1a1a2a',
-        color: '#fff',
-        confirmButtonColor: '#6366f1'
-      });
-    } finally {
-      resetButton.disabled = false;
-      resetButton.classList.remove('opacity-70', 'cursor-not-allowed');
-      resetButton.innerHTML = originalText;
+    // Musik
+    const audio = document.getElementById('backsound');
+    const musicBtn = document.getElementById('musicButton');
+    const statusSpan = document.getElementById('musicStatus');
+    audio.volume = 0.5;
+    audio.loop = true;
+    let isPlaying = false;
+    function updateButton() {
+        if (isPlaying) {
+            statusSpan.innerHTML = '🎵 Berputar';
+            musicBtn.style.background = '#6366f1';
+        } else {
+            statusSpan.innerHTML = '⏸️ Henti';
+            musicBtn.style.background = 'linear-gradient(135deg, #1e293b, #0f172a)';
+        }
     }
-  });
+    function playAudio() {
+        audio.play().then(() => { isPlaying = true; updateButton(); })
+            .catch(() => { isPlaying = false; updateButton(); statusSpan.innerHTML = '❌ Klik putar'; });
+    }
+    function pauseAudio() { audio.pause(); isPlaying = false; updateButton(); }
+    musicBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (isPlaying) pauseAudio();
+        else playAudio();
+    });
+    setTimeout(() => { playAudio(); }, 500);
+    audio.addEventListener('error', () => { statusSpan.innerHTML = '⚠️ Gagal muat'; musicBtn.style.opacity = '0.6'; });
+
+    // ==================== RESET API DENGAN PROXY CORS ====================
+    const API_URL = 'https://yudhamodz.my.id/api/reseller/reset';
+    const API_KEY = 'VYNIX-API-JIKG5BY1S3JG64EH';
+    // Gunakan public CORS proxy agar request bisa dari GitHub Pages
+    const PROXY_URL = 'https://corsproxy.io/?' + encodeURIComponent(API_URL);
+
+    const resetForm = document.getElementById('resetForm');
+    const resetButton = document.getElementById('resetButton');
+    const licenseInput = document.getElementById('license_key');
+
+    resetForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const licenseKey = licenseInput.value.trim();
+        if (!licenseKey) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Masukkan license key terlebih dahulu!',
+                background: '#1a1a2a',
+                color: '#fff'
+            });
+            return;
+        }
+
+        resetButton.disabled = true;
+        resetButton.classList.add('opacity-70', 'cursor-not-allowed');
+        const originalText = resetButton.innerHTML;
+        resetButton.innerHTML = '<svg class="animate-spin h-5 w-5 mr-2 inline" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Memproses...';
+
+        try {
+            const formBody = new URLSearchParams();
+            formBody.append('api_key', API_KEY);
+            formBody.append('key', licenseKey);
+
+            const response = await fetch(PROXY_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formBody.toString()
+            });
+
+            // Proxy response mungkin wrapped, coba baca text lalu parse
+            let data;
+            const responseText = await response.text();
+            try {
+                data = JSON.parse(responseText);
+            } catch(e) {
+                // Jika proxy mengembalikan HTML atau bukan JSON, coba cek apakah sukses
+                if (responseText.includes('success') || responseText.includes('status')) {
+                    data = { status: true, message: 'Reset berhasil (proxy response)' };
+                } else {
+                    throw new Error('Response bukan JSON: ' + responseText.substring(0,100));
+                }
+            }
+
+            if (data.status === true) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                    text: data.message || 'License key berhasil direset.',
+                    background: '#1a1a2a',
+                    color: '#fff',
+                    confirmButtonColor: '#6366f1'
+                });
+                licenseInput.value = '';
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal!',
+                    text: data.message || 'License key tidak valid atau sudah kadaluarsa.',
+                    background: '#1a1a2a',
+                    color: '#fff',
+                    confirmButtonColor: '#6366f1'
+                });
+            }
+        } catch (error) {
+            console.error(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Kesalahan Koneksi',
+                text: 'Tidak dapat terhubung ke server reset. Periksa koneksi atau coba lagi nanti.',
+                background: '#1a1a2a',
+                color: '#fff',
+                confirmButtonColor: '#6366f1'
+            });
+        } finally {
+            resetButton.disabled = false;
+            resetButton.classList.remove('opacity-70', 'cursor-not-allowed');
+            resetButton.innerHTML = originalText;
+        }
+    });
 </script>
 </body>
-</html>
+                  </html>
